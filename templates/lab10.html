@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-Flask</title>
+</head>
+<body> 
+
+    <h1>Laboratoire 10</h1>
+
+    <p>Veuiller ajouter une personne</p>
+
+    <p style="color:red"> 
+        {% autoescape false %}
+            {{ error }}
+        {% endautoescape %}
+    </p>
+
+    <form action="/validate" method="post">
+        <label for="nom">Nom : </label>
+        <input type="text" name="nom" value="{{ nom }}">
+        <br>
+
+        <label for="prenom">Prenom : </label>
+        <input type="text" name="prenom" value="{{ prenom }}">
+        <br>
+
+        <label for="age">Age : </label>
+        <input type="text" name="age" value="{{ age }}">
+        <br>
+
+        <input type="submit" value="Ajouter la personne">
+    </form>
+
+</body>
+</html>
