@@ -46,3 +46,7 @@ def result():
             records.append(record)
 
     return render_template("results.html", records=records, len=len(records))
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html'), 404

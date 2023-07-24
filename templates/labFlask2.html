@@ -12,12 +12,15 @@
 
     <p>Veuiller ajouter une personne</p>
 
-    <!-- Pour eviter de mettre le style dans html, on peut donner un id et le modifier en css -->
+    <!-- Pour eviter de mettre le style dans html,
+        on peut donner un id et le modifier en css.
+        Idéalement, on fait la validation avec JS!  -->
     <p style="color:red"> 
         {% autoescape false %}
             {{ error }}
         {% endautoescape %}
     </p>
+    
 
     <form action="/validate" method="post">
         <label for="nom">Nom : </label>
