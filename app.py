@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("lab10.html")
+    return render_template("labFlask2.html")
 
 
 @app.route("/validate", methods=["POST", "GET"])
@@ -29,17 +29,15 @@ def validate():
         error += "Vous devez entrer l'âge \n"
 
     if error:
-        return render_template("lab10.html", error=error, nom=nom, prenom=prenom, age=age)
+        return render_template("labFlask2.html", error=error, nom=nom, prenom=prenom, age=age)
 
     with open("db.txt", 'a') as file:
         file.write(f"{nom}, {prenom}, {age}\n")
     
-
-    return redirect(url_for("result"))
+    return render_template(url_for("result"))
 
 @app.route("/result")
 def result():
-    records = []
     with open("db.txt", 'r') as file:
         lines = file.readlines()
 
