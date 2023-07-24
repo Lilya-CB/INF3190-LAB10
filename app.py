@@ -33,11 +33,13 @@ def validate():
 
     with open("db.txt", 'a') as file:
         file.write(f"{nom}, {prenom}, {age}\n")
-    
-    return render_template(url_for("result"))
+
+    return redirect(url_for("result"))
+
 
 @app.route("/result")
 def result():
+    records = []
     with open("db.txt", 'r') as file:
         lines = file.readlines()
 
@@ -46,6 +48,7 @@ def result():
             records.append(record)
 
     return render_template("results.html", records=records, len=len(records))
+
 
 @app.errorhandler(404)
 def not_found(e):
