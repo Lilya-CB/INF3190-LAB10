@@ -1,3 +1,4 @@
 db.txt
-__pycache__/
+__pycache__/app.cpython-37.pyc
 venv/
+.DS_Store
