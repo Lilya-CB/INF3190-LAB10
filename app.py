@@ -10,7 +10,26 @@ def index():
     return render_template("labFlask2.html")
 
 
-@app.route("/validate", methods=["POST", "GET"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/validate", methods=["POST"])
 def validate():
     error = ""
     nom = request.form["nom"];
@@ -35,6 +54,9 @@ def validate():
         file.write(f"{nom}, {prenom}, {age}\n")
 
     return redirect(url_for("result"))
+
+
+
 
 
 @app.route("/result")
